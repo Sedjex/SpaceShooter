@@ -301,4 +301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f52b0b2188b4c4b0eae35bbff23ca48d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borders:
+    MinXOffset: 1.1
+    MaxXOffset: 1.1
+    MinYOffset: 1.1
+    MaxYOffset: 1.1
+    MinX: 0
+    MaxX: 0
+    MinY: 0
+    MaxY: 0
   SpeedPlayer: 5
