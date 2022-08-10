@@ -44,10 +44,10 @@ TagManager:
   - name: Background
     uniqueID: 1845980525
     locked: 0
-  - name: New Layer
+  - name: Stars
     uniqueID: 2275702219
     locked: 0
-  - name: New Layer
+  - name: Planets
     uniqueID: 2472109871
     locked: 0
   - name: New Layer
