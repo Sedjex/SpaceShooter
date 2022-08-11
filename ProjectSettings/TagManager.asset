@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Planet
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -51,7 +52,7 @@ TagManager:
   - name: Planets
     uniqueID: 2472109871
     locked: 0
-  - name: New Layer
+  - name: Enemy
     uniqueID: 2930870493
     locked: 0
   - name: New Layer
