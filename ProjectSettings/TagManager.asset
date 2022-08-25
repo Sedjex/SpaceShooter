@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Planet
   - Enemy
+  - Bullet
   layers:
   - Default
   - TransparentFX
@@ -55,7 +56,7 @@ TagManager:
   - name: Enemy
     uniqueID: 2930870493
     locked: 0
-  - name: New Layer
+  - name: Bullet
     uniqueID: 2195014319
     locked: 0
   - name: New Layer
