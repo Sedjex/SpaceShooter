@@ -699,6 +699,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 159ac9cc262bc4b0884e70aff312c502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PathPoints:
+  - {fileID: 315769857}
+  - {fileID: 1917466814}
+  - {fileID: 903030076}
+  - {fileID: 131420964}
+  - {fileID: 2048005437}
+  SpeedEnemy: 1
+  IsReturn: 1
+  NewPosition: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
