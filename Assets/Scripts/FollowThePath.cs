@@ -21,6 +21,7 @@ public class FollowThePath : MonoBehaviour
     private void Start()
     {
         NewPosition = NewPositionByPath(PathPoints);
+        transform.position = NewPosition[0];
     }
 
     private void Update()
