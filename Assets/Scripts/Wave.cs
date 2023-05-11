@@ -26,7 +26,7 @@ public class Wave : MonoBehaviour
     [Header("Teast wave")]
     public bool IsTestWave;
 
-    public FollowThePath FollowComponent;
+    private FollowThePath FollowComponent;
 
     private Enemy enemyComponentScript; 
 
