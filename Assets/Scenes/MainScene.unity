@@ -1393,7 +1393,7 @@ Transform:
   m_GameObject: {fileID: 1899000622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 1671782077}
   m_RootOrder: 3
@@ -1411,7 +1411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj_Bonus: {fileID: 4947770395099108303, guid: ae8ca98005a274dab9d276b9d490c02d, type: 3}
-  time_Bonus_Spawn: 7
+  time_Bonus_Spawn: 15
   obj_Planets:
   - {fileID: 7752551994505854682, guid: b2337921e83b94ca2a598646e8ecacef, type: 3}
   - {fileID: 3972644476558474449, guid: b80d2ae922a5c4db6bb11d2000d4c02f, type: 3}

@@ -82,8 +82,8 @@ public class Wave : MonoBehaviour
             pathPositions[i] = path[i].position;
         }
 
-        pathPositions = Smoothing(pathPositions);
-        pathPositions = Smoothing(pathPositions);
+        //pathPositions = Smoothing(pathPositions);
+        //pathPositions = Smoothing(pathPositions);
 
         for (int i = 0; i < pathPositions.Length; i++)
         {
@@ -91,19 +91,19 @@ public class Wave : MonoBehaviour
         }
     }
 
-    Vector3[] Smoothing(Vector3[] pathPositions)
-    {
-        Vector3[] newPathPosition = new Vector3[(pathPositions.Length - 2) * 2 + 2];
-        newPathPosition[0] = pathPositions[0];
-        newPathPosition[newPathPosition.Length - 1] = pathPositions[pathPositions.Length - 1];
-        int j = 1;
-        for (int i = 0; i < pathPositions.Length -2; i++)
-        {
-            newPathPosition[j] = pathPositions[i] + (pathPositions[i + 1] - pathPositions[i]) * 0.75f;
+    //Vector3[] Smoothing(Vector3[] pathPositions)
+    //{
+    //    Vector3[] newPathPosition = new Vector3[(pathPositions.Length - 2) * 2 + 2];
+    //    newPathPosition[0] = pathPositions[0];
+    //    newPathPosition[newPathPosition.Length - 1] = pathPositions[pathPositions.Length - 1];
+    //    int j = 1;
+    //    for (int i = 0; i < pathPositions.Length -2; i++)
+    //    {
+    //        newPathPosition[j] = pathPositions[i] + (pathPositions[i + 1] - pathPositions[i]) * 0.75f;
 
-            pathPositions[j + 1] = pathPositions[i + 1] + (pathPositions[i + 2] - pathPositions[i + 1]) * 0.25f;
-            j += 2;
-        }
-        return newPathPosition;
-    }
+    //        pathPositions[j + 1] = pathPositions[i + 1] + (pathPositions[i + 2] - pathPositions[i + 1]) * 0.25f;
+    //        j += 2;
+    //    }
+    //    return newPathPosition;
+    //}
 }
