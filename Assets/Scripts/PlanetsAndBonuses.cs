@@ -40,7 +40,7 @@ public class PlanetsAndBonuses : MonoBehaviour
             //planets will move at an angle in the range of -25 to 25
             GameObject newPlanet = Instantiate(planetsList[randomIndex],
             new Vector2(Random.Range(PlayerMoving.instance.borders.MinX, PlayerMoving.instance.borders.MaxX),
-            PlayerMoving.instance.borders.MaxY * 1.5f),
+            PlayerMoving.instance.borders.MaxY * 2f),
             Quaternion.Euler(0, 0, Random.Range(-25, 25)));
 
             //remove selected planet from the list

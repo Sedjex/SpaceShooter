@@ -63,6 +63,7 @@ public class PlayerMoving : MonoBehaviour
         {
             //get 2D coordinates click on screen
             _mousePosition = _camera.ScreenToWorldPoint(Input.mousePosition);
+            _mousePosition.y += 1.5f;
             //move player to coordinates click at given speed
             transform.position = Vector2.MoveTowards(transform.position, _mousePosition, SpeedPlayer * Time.deltaTime);
         }
