@@ -47,10 +47,10 @@ public class Wave : MonoBehaviour
             FollowComponent.IsReturn = IsReturn;
 
             enemyComponentScript = newEnemy.GetComponent<Enemy>();
-            enemyComponentScript.ShotChance = shootSetting.ShotChance;
+            enemyComponentScript.shot_Chance = shootSetting.ShotChance;
 
-            enemyComponentScript.ShotTimeMin = shootSetting.ShotTimeMin;
-            enemyComponentScript.ShotTimeMax = shootSetting.ShotTimeMax;
+            enemyComponentScript.shot_Time_Min = shootSetting.ShotTimeMin;
+            enemyComponentScript.shot_Time_Max = shootSetting.ShotTimeMax;
 
             newEnemy.SetActive(true);
 

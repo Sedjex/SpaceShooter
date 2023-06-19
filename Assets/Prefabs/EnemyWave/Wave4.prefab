@@ -172,7 +172,7 @@ MonoBehaviour:
     ShotChance: 75
     ShotTimeMin: 1
     ShotTimeMax: 3
-  ObjEnemy: {fileID: 5845187401605340326, guid: 45e8b8bd7f66a4f479f5cadd03e105fe, type: 3}
+  ObjEnemy: {fileID: 5845187401605340326, guid: 0ba5c1c1b2da744708a249951bde2164, type: 3}
   CountInWave: 15
   SpeedEnemy: 7
   TimeSpawn: 1

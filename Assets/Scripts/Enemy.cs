@@ -4,53 +4,111 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    //enemy health
-    public int EnemyHealth;
+    // Enemy health.
+    public int enemy_Health;
 
     [Space]
-    // bullet prefab to be spawned
-    public GameObject ObjBullet;
-    //interval within which the shot occurs
-    public float ShotTimeMin, ShotTimeMax;
-    //the probability of the shot
-    public int ShotChance;
+    // The Bullet prefab to be spawned.
+    public GameObject obj_Bullet;
+    //time interval within which the shot occurs.
+    public float shot_Time_Min, shot_Time_Max;
+    //the probability of the enemy's shot
+    public int shot_Chance;
+
+    [Header("BOSS")]
+    // The current object is the boss.
+    public bool is_Boss;
+    //The bullet prefab extra boss shot
+    public GameObject obj_Bullet_Boss;
+    // How long between each bullet Boss spawn.
+    public float time_Bullet_Boss_Spawn;
+    // Timer to determine when to shoot.
+    private float _timer_Shot_Boss;
+    //the probability of the Boss shot
+    public int shot_Chance_Boss;
 
     private void Start()
     {
-        Invoke("OpenFire", Random.Range(ShotTimeMin, ShotTimeMax));
-    }
-
-    private void OpenFire()
-    {
-        if (Random.value < (float)ShotChance / 100)
+        // If the current object is not the boss, make only one shot
+        if (!is_Boss)
         {
-            //create an instance of bullet in the enemy position
-            Instantiate(ObjBullet, transform.position, Quaternion.identity);
+            // Call the OpenFire in the time interval between shot_Time_Min and shot_Time_Max
+            Invoke("OpenFire", Random.Range(shot_Time_Min, shot_Time_Max));
         }
     }
 
-    //taking damage
+    private void Update()
+    {
+        // If the current object is the boss
+        if (is_Boss)
+        {
+            //every timer_Shot_Boss seconds we call the method:
+            //OpenFire;
+            //OpenFireBoss.
+            if (Time.time > _timer_Shot_Boss)
+            {
+                _timer_Shot_Boss = Time.time + time_Bullet_Boss_Spawn;
+                OpenFire();
+                OpenFireBoss();
+            }
+        }
+    }
+    //Method Open fire Boss
+    private void OpenFireBoss()
+    {
+        //if random value less than shot chance, making a extra boss shot
+        if (Random.value < (float)shot_Chance_Boss / 100)
+        {
+            // Shoot a few bullets like a fan
+            for (int zZz = -40; zZz < 40; zZz += 10)
+            {
+                // Create an instance of the prefab obj_Bullet_Boss in the boss position and 
+                // rotates zZz degrees around the z axis
+                Instantiate(obj_Bullet_Boss, transform.position, Quaternion.Euler(0, 0, zZz));
+            }
+        }
+    }
+    //Method Open fire
+    private void OpenFire()
+    {
+        //if random value less than shot chance, making a shot
+        if (Random.value < (float)shot_Chance / 100)
+        {
+            // Create an instance of the prefab obj_Bullet in the enemy position and without rotation.
+            Instantiate(obj_Bullet, transform.position, Quaternion.identity);
+        }
+    }
+
+    // Method of taking damage by the enemy
     public void GetDamage(int damage)
     {
-        EnemyHealth -= damage;
-        if (EnemyHealth <= 0)
+        // Reduce the health by the damage amount.
+        enemy_Health -= damage;
+        // If the enemy does not have a health...
+        if (enemy_Health <= 0)
         {
+            // Call the enemy destruction method
             Destruction();
         }
     }
-
+    // Method destruction enemy.
     private void Destruction()
     {
+        // Destroy the current player object.
         Destroy(gameObject);
     }
-
-    //if eneme collides player - gets the damage
+    //if enemy collides player, Player gets the damage. 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.tag == "Player")
         {
             GetDamage(1);
             Player.instance.GetDamage(1);
+        }
+        if (coll.tag == "Shield")
+        {
+            GetDamage(1);
+            Player.instance.GetDamageShield(1);
         }
     }
 }

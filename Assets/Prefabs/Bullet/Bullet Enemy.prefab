@@ -298,8 +298,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2249b25354a4e4707b284c8a46a059dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
-  IsEnemyBullet: 1
+  damage: 1
+  is_Enemy_Bullet: 1
 --- !u!58 &1764617340823311914
 CircleCollider2D:
   m_ObjectHideFlags: 0

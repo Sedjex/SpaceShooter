@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27554e07aaab4b558718734c47e7928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 5
+  Speed: 4
 --- !u!114 &1764617340823311915
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2249b25354a4e4707b284c8a46a059dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
-  IsEnemyBullet: 0
+  damage: 1
+  is_Enemy_Bullet: 0
 --- !u!58 &1764617340823311914
 CircleCollider2D:
   m_ObjectHideFlags: 0
