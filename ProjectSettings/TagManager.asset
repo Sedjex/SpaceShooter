@@ -9,6 +9,8 @@ TagManager:
   - Bullet
   - Projectile
   - Shield
+  - SlHP
+  - SlShield
   layers:
   - Default
   - TransparentFX
@@ -69,4 +71,7 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 3786993889
+    locked: 0
+  - name: canvas
+    uniqueID: 1908579827
     locked: 0

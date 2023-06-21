@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -15,6 +13,11 @@ public class Player : MonoBehaviour
     // Shield health.
     public int shield_Health = 1;
 
+    // Reference private to the UI's health bar.
+    private Slider _slider_hp_Player;
+    // Reference private to the UI's shield bar.
+    private Slider _slider_hp_Shield;
+
     private void Awake()
     {
         // Setting up the references.
@@ -26,29 +29,40 @@ public class Player : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        // Look for an object with tag hp_Player and take the Slider component from it
+        _slider_hp_Player = GameObject.FindGameObjectWithTag("SlHP").GetComponent<Slider>();
+        // Look for an object with tag hp_Shield and take the Slider component from it
+        _slider_hp_Shield = GameObject.FindGameObjectWithTag("SlShield").GetComponent<Slider>();
     }
 
-    private void Start()
-    {
-        // If the shield has life...
-        if (shield_Health != 0)
-        {
-            //Show shield.
-            obj_Shield.SetActive(true);
-        }
-        // If the shield has no life...
-        else
-        {
-            // Hide shield.
-            obj_Shield.SetActive(false);
-        }
-    }
+    //private void Start()
+    //{
+    //    // Set the health bar's value to the current health.
+    //    _slider_hp_Player.value = (float)player_Health / 15; //slider has a range from 0 to 1
+    //    // If the shield has life...
+    //    if (shield_Health != 0)
+    //    {
+    //        //Show shield.
+    //        obj_Shield.SetActive(true);
+    //        // Set the shield bar's value to the current health.
+    //        _slider_hp_Shield.value = (float)shield_Health / 6; //slider has a range from 0 to 1
+    //    }
+    //    // If the shield has no life...
+    //    else
+    //    {
+    //        // Hide shield.
+    //        obj_Shield.SetActive(false);
+    //        _slider_hp_Shield.value = 0;
+    //    }
+    //}
 
     // Method of taking damage by the shield
     public void GetDamageShield(int damage)
     {
         // Reduce the shield health by the damage amount.
         shield_Health -= damage;
+        // Update shield bar's value to the current shield health.
+        _slider_hp_Shield.value = (float)shield_Health / 10;
 
         // If the shield does not have a health...
         if (shield_Health <= 0)
@@ -63,6 +77,8 @@ public class Player : MonoBehaviour
     {
         // Reduce the health by the damage amount.
         player_Health -= damage;
+        // Update health bar's value to the current health.
+        _slider_hp_Player.value = (float)player_Health / 10;
 
         // If the player does not have a health...
         if (player_Health <= 0)
