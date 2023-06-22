@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4947770394394293287}
   - component: {fileID: 4947770394394293288}
+  - component: {fileID: 8973233041150400931}
   m_Layer: 0
   m_Name: Sprite PS_7
   m_TagString: Untagged
@@ -27,9 +28,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4947770394720491013}
-  m_Father: {fileID: 4947770395099108306}
+  m_Children: []
+  m_Father: {fileID: 4947770394720491013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4947770394394293288
@@ -83,6 +83,25 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8973233041150400931
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4947770394394293286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0717027a4ae4c473d8bb9362bcf2a8ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4947770394720491012
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,8 +129,9 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4947770394394293287}
+  m_Children:
+  - {fileID: 4947770394394293287}
+  m_Father: {fileID: 4947770395099108306}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4947770394720491014
@@ -195,7 +215,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 6.6, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children:
-  - {fileID: 4947770394394293287}
+  - {fileID: 4947770394720491013}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
